@@ -42,7 +42,7 @@ class Node:
     parent_ids: List[int]
     probabilities: Dict[Condition, float]
 
-    def __init__(self, idx: int, dif_values: int, parent_ids, probabilities: Dict[Condition, float]):
+    def __init__(self, idx: int, dif_values: int, parent_ids: List[int], probabilities: Dict[Condition, float]):
         self.idx = idx
         self.dif_values = dif_values
         self.parent_ids = parent_ids
@@ -73,7 +73,7 @@ class Net:
     node_dict: Dict[int, Node]
     nodes: List[Node]
 
-    def __init__(self, node_dict):
+    def __init__(self, node_dict: Dict[int, Node]):
         self.node_dict = node_dict
         self.nodes = [node_dict[k] for k in node_dict.keys()]
 
